@@ -67,9 +67,12 @@ colPerc(table2)
 
 ### Inferential Results
 
-
-
-
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+#fisherXY(FinalData$treatment$, FinalData$sex)
+```
 
 ## Females 
 
@@ -100,6 +103,13 @@ colPerc(table2)
 
 ### Inferential Results
 
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+#fisherXY(FinalData$treatment, FinalData$sex)
+```
+
 
 ## LGBTQ
 
@@ -127,6 +137,13 @@ colPerc(table2)
 ```
 
 ### Inferential Results
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+#fisherXY(FinalData$treatment, FinalData$LGBTQ)
+```
 
 
 ## Druggies
@@ -157,5 +174,12 @@ colPerc(table2)
 ```
 
 ### Inferential Results
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+#fisherXY(FinalData$treatment, FinalData$DrugUser)
+```
 
 # Discussion and Conclusion 

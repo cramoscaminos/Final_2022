@@ -36,7 +36,7 @@ Both treatment and subgroups sex(male/female), LGBTQ, DrugUser are categorical v
 
 # Results
 
-# Descriptive Results 
+## Descriptive Results 
 
 ### Graphic Descriptive Results  
 
@@ -65,10 +65,15 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
+### Inferential Results
 
 
-  
+
+
+
 ## Females 
+
+### Graphic Descriptive Results 
 
 ```{r}
 dd2 <- FinalData %>% group_by(treatment, sex ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -93,7 +98,7 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
-
+### Inferential Results
 
 
 ## LGBTQ
@@ -121,10 +126,12 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
-
+### Inferential Results
 
 
 ## Druggies
+
+### Graphic Descriptive Results 
 
 ```{r}
 dd2 <- FinalData %>% group_by(treatment, DrugUser ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -148,3 +155,7 @@ table2 <- xtabs(~treatment + DrugUser, data=FinalData)
 rowPerc(table2)
 colPerc(table2)
 ```
+
+### Inferential Results
+
+# Discussion and Conclusion 

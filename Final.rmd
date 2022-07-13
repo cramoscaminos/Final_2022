@@ -18,6 +18,10 @@ FinalDat <-read.csv(file="final_Data.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
+males = filter(FinalData, sex=="M")
+females = filter(FinalData, sex=="F")
+gay = filter(FinalData, LGBTQ=="gay")
+DrugUser = filter(FinalData, DrugUser=="yes")
 ```
 
 # Introduction
@@ -26,9 +30,9 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 Is the new preventative vaccine (covid91) treatment effective for the following subgroups sex (male/female), LGBTQ, DrugUser? 
 
-$H_0$ Preventative covid91 treatment is effective for subgroup: sex (male/female): LGBTQ: DrugUser 
+$H_0$ Preventative covid91 vaccine treatment is not  effective for subgroup: sex (male/female): LGBTQ: DrugUser 
 
-$H_a$ Preventative covid91 treatment is not effective for subgroup: sex (male/female): LGBTQ: DrugUser 
+$H_a$ Preventative covid91 treatment is effective for subgroup: sex (male/female): LGBTQ: DrugUser 
 
 # Methods 
 
@@ -43,35 +47,35 @@ Both treatment and subgroups sex(male/female), LGBTQ, DrugUser are categorical v
 ## Males
 
 ```{r}
-dd2 <- FinalData %>% group_by(treatment, sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+dd2 <- males %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x=sex,y=count,fill=treatment))
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
 basicC + geom_bar(stat="identity",position="dodge")
 
 #Now for percentage plot
 
-basicCC <- ggplot(dd2,aes(x=sex,y=prcnt*100,fill=treatment)) 
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table2 <- xtabs(~treatment + sex, data=FinalData)
-rowPerc(table2)
-colPerc(table2)
+table1 <- xtabs(~infected + treatment, data=males)
+rowPerc(table1)
+colPerc(table1)
 ```
 
 ### Inferential Results
 
 ```{r}
-chisq.test(table2)
-chisqtestGC(table2)
-fisher.test(table2)
-#fisherXY(FinalData$treatment$, FinalData$sex)
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+#fisherXY(male$treatment$, males$infected)
 ```
 
 ## Females 
@@ -79,70 +83,70 @@ fisher.test(table2)
 ### Graphic Descriptive Results 
 
 ```{r}
-dd2 <- FinalData %>% group_by(treatment, sex ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+dd2 <- females %>% group_by(infected, treatment ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x=sex,y=count,fill=treatment))
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
 basicC + geom_bar(stat="identity",position="dodge")
 
 #Now for percentage plot
 
-basicCC <- ggplot(dd2,aes(x=sex,y=prcnt*100,fill=treatment)) 
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table2 <- xtabs(~treatment + sex, data=FinalData)
-rowPerc(table2)
-colPerc(table2)
+table2 <- xtabs(~infected + treatment, data=females)
+rowPerc(table1)
+colPerc(table1)
 ```
 
 ### Inferential Results
 
 ```{r}
-chisq.test(table2)
-chisqtestGC(table2)
-fisher.test(table2)
-#fisherXY(FinalData$treatment, FinalData$sex)
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+#fisherXY(females$treatment$, females$infected)
 ```
 
 
 ## LGBTQ
 
 ```{r}
-dd2 <- FinalData %>% group_by(treatment, LGBTQ ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+dd2 <- gay %>% group_by(infected, treatment ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x= LGBTQ,y=count,fill=treatment))
+basicC <- ggplot(dd2,aes(x= infected,y=count,fill=treatment))
 basicC + geom_bar(stat="identity",position="dodge")
 
 #Now for percentage plot
 
-basicCC <- ggplot(dd2,aes(x= LGBTQ,y=prcnt*100,fill=treatment)) 
+basicCC <- ggplot(dd2,aes(x= infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table2 <- xtabs(~treatment + LGBTQ, data=FinalData)
-rowPerc(table2)
-colPerc(table2)
+table1 <- xtabs(~infected + treatment, data=gay)
+rowPerc(table1)
+colPerc(table1)
 ```
 
 ### Inferential Results
 
 ```{r}
-chisq.test(table2)
-chisqtestGC(table2)
-fisher.test(table2)
-#fisherXY(FinalData$treatment, FinalData$LGBTQ)
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+#fisherXY(gay$treatment, gay$infected)
 ```
 
 
@@ -151,35 +155,39 @@ fisher.test(table2)
 ### Graphic Descriptive Results 
 
 ```{r}
-dd2 <- FinalData %>% group_by(treatment, DrugUser ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+dd2 <- DrugUser %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x=DrugUser,y=count,fill=treatment))
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
 basicC + geom_bar(stat="identity",position="dodge")
 
 #Now for percentage plot
 
-basicCC <- ggplot(dd2,aes(x=DrugUser,y=prcnt*100,fill=treatment)) 
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table2 <- xtabs(~treatment + DrugUser, data=FinalData)
-rowPerc(table2)
-colPerc(table2)
+table1 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table1)
+colPerc(table1)
 ```
 
 ### Inferential Results
 
 ```{r}
-chisq.test(table2)
-chisqtestGC(table2)
-fisher.test(table2)
-#fisherXY(FinalData$treatment, FinalData$DrugUser)
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+#fisherXY(DrugUser$treatment, DrugUser$infected)
 ```
 
 # Discussion and Conclusion 
+
+
+
+

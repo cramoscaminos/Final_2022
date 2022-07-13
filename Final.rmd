@@ -32,18 +32,119 @@ $H_a$ Preventative covid91 treatment is not effective for subgroup: sex (male/fe
 
 # Methods 
 
-Both treatment and subgroups sex(male/female), LGBTQ, DrugUser are categorical variables. Therefore, the method of analysis technique used is cat~cat. The plot is a plotbar, summary is a crosstable and the inference will be a chi-square test. 
+Both treatment and subgroups sex(male/female), LGBTQ, DrugUser are categorical variables. Therefore, the method of analysis technique used is cat~cat. The plot is a plotbar, summary is a crosstable and the inference will be a chi-square test.  
 
+# Results
+
+# Descriptive Results 
+
+### Graphic Descriptive Results  
 
 ## Males
 
+```{r}
+dd2 <- FinalData %>% group_by(treatment, sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
-## Females
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=sex,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=sex,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+### Numerical Descriptive Results 
+
+```{r}
+table2 <- xtabs(~treatment + sex, data=FinalData)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
+
+  
+## Females 
+
+```{r}
+dd2 <- FinalData %>% group_by(treatment, sex ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=sex,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=sex,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+### Numerical Descriptive Results 
+
+```{r}
+table2 <- xtabs(~treatment + sex, data=FinalData)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
 
 
 ## LGBTQ
+
+```{r}
+dd2 <- FinalData %>% group_by(treatment, LGBTQ ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x= LGBTQ,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x= LGBTQ,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+### Numerical Descriptive Results 
+
+```{r}
+table2 <- xtabs(~treatment + LGBTQ, data=FinalData)
+rowPerc(table2)
+colPerc(table2)
+```
+
 
 
 
 ## Druggies
 
+```{r}
+dd2 <- FinalData %>% group_by(treatment, DrugUser ) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=DrugUser,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=DrugUser,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+### Numerical Descriptive Results 
+
+```{r}
+table2 <- xtabs(~treatment + DrugUser, data=FinalData)
+rowPerc(table2)
+colPerc(table2)
+```

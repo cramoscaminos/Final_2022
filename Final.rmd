@@ -35,9 +35,9 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 Is the new preventative vaccine (covid91) treatment effective for the following subgroups sex (male/female), LGBTQ, DrugUser? 
 
-$H_0$ Preventative covid91 vaccine treatment is not effective for subgroup: sex (male/female): LGBTQ: DrugUser 
+$H_0$ Preventative covid91 vaccine treatment has no effective for subgroup: sex (male/female): LGBTQ: DrugUser 
 
-$H_a$ Preventative covid91 treatment is effective for subgroup: sex (male/female): LGBTQ: DrugUser 
+$H_a$ Preventative covid91 treatment effects subgroup: sex (male/female): LGBTQ: DrugUser 
 
 # Methods 
 
@@ -74,7 +74,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of men who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. 
+I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of men who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. I would recommend the Covid91 vaccine for the Male subgroup. 
 
 ## Females 
 
@@ -105,7 +105,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a  negative effect when Females took the placebo vs the covid91 vaccine.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. The test also confirms that the odds ratio of females who take the placebo contract covid19 almost 1.4 more times than Females who took the vaccine. The covid91 vaccine is effective for the Female subgroup tested.
+I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a  negative effect when Females took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. The test also confirms that the odds ratio of females who take the placebo contract covid19 almost 1.4 more times than Females who took the vaccine. The covid91 vaccine is effective for the Female subgroup tested. I would recommend the Covid91 for the Female subgroup. 
 
 ## LGBTQ 
 
@@ -116,6 +116,7 @@ barchartGC(~infected + treatment,data=LGBTQ)
 barchartGC(~infected + treatment,data=LGBTQ, type="percent")
 ```  
 
+The bar chart shows that in the individuals in subgroup LGBTQ  who take the vaccine (covid91) are more likely to contract the virus covid19. Subgroup LGBTQ who take the placebo are 13% less likely to contract covid19 versus LGBTQ subgroup who took the vaccine and contacted covid19 87% of the time. 
 
 
 ### Numerical Descriptive Results 
@@ -126,7 +127,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
 
-
+The percentage of infection is higher for subgroup LGBTQ who took the vaccine. Those who took the placebo became infected approximately 13.33%  of the time versus 86.67% who took the vaccine and contracted covid19. The subgroup LBGTQ in the vaccine group are 0.1465 times more likely to become infected when receiving the vaccine.
 
 ### Inferential Results
 
@@ -136,7 +137,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```    
 
-
+I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup LGBTQ. Members of the LGBTQ subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000000132 lessthan 0.05. the Fisher exact test P-value is 0.000000001642. The odds ratio is 0.1465. I would not recommend that memebers of the LGBTQ subgroup take the covid91 vaccine.  
 
 ## Druggies
 
@@ -147,6 +148,7 @@ barchartGC(~infected + treatment,data=DrugUser)
 barchartGC(~infected + treatment,data=DrugUser, type="percent")
 ``` 
 
+The bar chart shows in subgroup DrugUser individuals who take the vaccine (covid91) are more less likely to contract the virus covid19. DrugUsers who take the vaccine are 85% more likely to contract covid19 versus DrugUsers who took the placebo and contacted covid19 15% of the time. 
 
 
 ### Numerical Descriptive Results 
@@ -157,7 +159,7 @@ rowPerc(table1)
 colPerc(table1)
 ```        
 
-
+The percentage of infection is  higher for DrugUsers who took the vaccine. Those who took the placebo became infected approximately 15%  of the time versus 85% who took the vaccine and contracted covid19. The DrugUsers in the placebo group are  less likely to become infected when receiving the placebo.
 
 ### Inferential Results
 
@@ -167,7 +169,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```     
 
-
+I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
 
 # Discussion and Conclusion 
 

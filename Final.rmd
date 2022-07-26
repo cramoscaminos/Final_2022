@@ -54,7 +54,7 @@ barchartGC(~infected + treatment,data=Males)
 barchartGC(~infected + treatment,data=Males, type="percent")
 ```  
   
-The bar chart shows that males who take the vaccine (covid91) are far less likely to contract the virus covid19. Males who take the placebo are 67.78% more likely to contract covid versus males who took the vaccine and contacted covid19 32.22% of the time. 
+The bar chart shows that males who take the vaccine (covid91) are far less likely to contract the virus covid19. Males who take the placebo are 68% more likely to contract covid19 versus males who took the vaccine and contacted covid19 32% of the time. 
 
 ### Numerical Descriptive Results  
 
@@ -64,7 +64,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
   
-The percentage of infection is much higher for males who took the placebo. Those who took the placebo became infected approximately 68%  of the time versus 32% who took the vaccine and contracted covid19. The Males in the placebo group are 2 times more likely to become infected when receiving the placebo.
+The percentage of infection is much higher for males who took the placebo. Those who took the placebo became infected approximately 67.78%  of the time versus 32.22% who took the vaccine and contracted covid19. The Males in the placebo group are 2 times more likely to become infected when receiving the placebo.
   
 ### Inferential Results 
 
@@ -74,7 +74,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of men who take the placebo contract covid19 2 to 1 more times. 
+I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of men who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. 
 
 ## Females 
 
@@ -85,7 +85,7 @@ barchartGC(~infected + treatment,data=Females)
 barchartGC(~infected + treatment,data=Females, type="percent")
 ```  
 
-
+The bar chart shows that Females who take the vaccine (covid91) are less likely to contract the virus covid19. Females who took the placebo are 58% more likely to contract covid19 versus Females who took the vaccine and contacted covid19 42% of the time.
 
 ### Numerical Descriptive Results 
 
@@ -95,7 +95,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
 
-
+The percentage of infection is much higher for Females who took the placebo. Those who took the placebo became infected approximately 58.89%  of the time versus 41.11% who took the vaccine and contracted covid19. The Females in the placebo group are 1.5 times more likely to become infected when receiving the placebo.
 
 ### Inferential Results
 
@@ -105,7 +105,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-
+I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a  negative effect when Females took the placebo vs the covid91 vaccine.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. The test also confirms that the odds ratio of females who take the placebo contract covid19 almost 1.4 more times than Females who took the vaccine. The covid91 vaccine is effective for the Female subgroup tested.
 
 ## LGBTQ 
 

@@ -169,9 +169,15 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```     
 
-I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
+I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Squared test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
 
 # Discussion and Conclusion 
+
+The question posed asked to determine whether the covid91 vaccine affected the subgroups Male, Female, LGBTQ, and DrugUser tested. Additionally, we are asked to recommend or not recommend the covid91 vaccine for the four subgroups. The Male subgroup was affected positively by the vaccine. Males were less likely to contract covid after receiving the vaccine versus the placebo. The Female subgroup showed a positive effect. Females who took the vaccine were also affected positively compared to those who took the placebo. Therefore, I conclude that both Males and Females should take the covid vaccine. 
+
+The next subgroup includes the LGBTQ subgroup who were affected negatively by the covid vaccine. LGBTQ individuals were more likely to contract covid after taking the vaccine. The placebo seemed more effective for this subgroup. The subgroup DrugUser also showed a negative affect when they took the covid vaccine versus the placebo. Members of this group were more likely to contract covid after taking the the vaccine, Therefore, I conclude that members of the LGBTQ subgroup and members of the DrugUser subgroup should not take the vaccine as they are more likey to contract covid.
+
+The vaccine had an affect on each of the subgroups. Male and Female were affected positively. I would recommend that these two groups take the covid91 vaccine. The LGBTQ and DrugUser  subgroup were affected negatively. I don not recommend that either of these two subgroups take the covid91 vaccine. The results showed that there is a difference in each of these subgroups. Therefore in each case I rejected the Null Hypothesis.  
 
 
 

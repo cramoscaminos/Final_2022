@@ -81,23 +81,19 @@ fisher.test(table1)
 ### Graphic Descriptive Results 
 
 ```{r}
-dd2 <- female %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
-basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
-basicC + geom_bar(stat="identity",position="dodge")
-#Now for percentage plot
-basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
-basicCC + geom_bar(stat="identity", position = "dodge")
-```
+barchartGC(~infected + treatment,data=Females)
+barchartGC(~infected + treatment,data=Females, type="percent")
+```  
 
 
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=female)
+table1 <- xtabs(~infected + treatment, data=Females)
 rowPerc(table1)
 colPerc(table1)
-```
+```  
 
 
 
@@ -106,9 +102,8 @@ colPerc(table1)
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-femalefish <- fisher.test(table1)
-femalefish
-```
+fisher.test(table1)
+```  
 
 
 
@@ -117,23 +112,19 @@ femalefish
 ### Graphic Descriptive Results  
 
 ```{r}
-dd2 <- gay %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
-basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
-basicC + geom_bar(stat="identity",position="dodge")
-#Now for percentage plot
-basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
-basicCC + geom_bar(stat="identity", position = "dodge")
-```
+barchartGC(~infected + treatment,data=LGBTQ)
+barchartGC(~infected + treatment,data=LGBTQ, type="percent")
+```  
 
 
 
 ### Numerical Descriptive Results 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=gay)
+table1 <- xtabs(~infected + treatment, data=LGBTQ)
 rowPerc(table1)
 colPerc(table1)
-```
+```  
 
 
 
@@ -142,9 +133,8 @@ colPerc(table1)
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-gayfish <- fisher.test(table1)
-gayfish
-```
+fisher.test(table1)
+```    
 
 
 

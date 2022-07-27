@@ -74,7 +74,24 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of Males who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. I would recommend the covid91 vaccine for the Male subgroup. 
+I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of Males who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. I would recommend the covid91 vaccine for the Male subgroup.   
+
+## Efficacy
+
+```{r}
+efficMales = 2.09/(2.09 + 1) * 100
+efficMales = round(efficMales)
+
+confIntLower = 1.67/(1.67 + 1) * 100
+confIntLower = round(confIntLower)
+confIntUpper = 2.64/(2.64 + 1) * 100
+confIntUpper = round(confIntUpper)
+```
+
+The efficacy for Males was `r efficMales`%
+
+The 95% confidence interval for efficacy was (`r confIntLower` , `r confIntUpper`)%
+
 
 ## Females 
 
@@ -106,6 +123,23 @@ fisher.test(table1)
 ```  
 
 I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a  negative effect when Females took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. The test also confirms that the odds ratio of females who take the placebo contract covid19 almost 1.4 more times than Females who took the vaccine. The covid91 vaccine is effective for the Female subgroup tested. I would recommend the Covid91 for the Female subgroup. 
+
+## Efficacy 
+
+```{r}
+efficFemales = 1.42/(1.42 + 1) * 100
+efficFemales = round(efficFemales)
+
+confIntLower = 1.15/(1.15 + 1) * 100
+confIntLower = round(confIntLower)
+confIntUpper = 1.77/(1.77 + 1) * 100
+confIntUpper = round(confIntUpper)
+```
+
+The efficacy for Females was `r efficFemales`%
+
+The 95% confidence interval for efficacy was (`r confIntLower` , `r confIntUpper`)%
+
 
 ## LGBTQ 
 
@@ -139,6 +173,23 @@ fisher.test(table1)
 
 I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup LGBTQ. Members of the LGBTQ subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000000132 less than 0.05. the Fisher exact test P-value is 0.000000001642. The odds ratio is 0.1465. I would not recommend that memebers of the LGBTQ subgroup take the covid91 vaccine.  
 
+## Efficacy 
+
+```{r}
+efficLGBTQ = 0.14/(0.14 + 1) * 100
+efficLGBTQ = round(efficLGBTQ)
+
+confIntLower = 0.05/(0.05 + 1) * 100
+confIntLower = round(confIntLower)
+confIntUpper = 0.31/(0.31 + 1) * 100
+confIntUpper = round(confIntUpper)
+```
+
+The efficacy for LGBTQ was `r efficLGBTQ`%
+
+The 95% confidence interval for efficacy was (`r confIntLower` , `r confIntUpper`)%
+
+
 ## Druggies
 
 ### Graphic Descriptive Results  
@@ -168,6 +219,23 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```     
+
+## Efficacy
+
+```{r}
+efficDrugUser = .17/(.17 + 1) * 100
+efficDrugUser = round(efficDrugUser)
+
+confIntLower = .07/(.07 + 1) * 100
+confIntLower = round(confIntLower)
+confIntUpper = .36/(.36 + 1) * 100
+confIntUpper = round(confIntUpper)
+```
+
+The efficacy for DrugUser was `r efficDrugUser`%
+
+The 95% confidence interval for efficacy was (`r confIntLower` , `r confIntUpper`)%
+
 
 I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Squared test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
 

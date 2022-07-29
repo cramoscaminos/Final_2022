@@ -35,9 +35,9 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 Is the new preventative vaccine (covid91) treatment effective for the following subgroups sex (male/female), LGBTQ, DrugUser? 
 
-$H_0$ Preventative covid91 vaccine treatment has no effect on subgroup: sex (Male/Female): LGBTQ: DrugUser 
+$H_0$ Preventative covid91 vaccine treatment was not effective on preventing subgroup: sex (Male/Female): LGBTQ: DrugUser from contracting covid
 
-$H_a$ Preventative covid91 treatment affects subgroup: sex (male/female): LGBTQ: DrugUser 
+$H_a$ Preventative covid91 treatment was effective in preventing subgroup: sex (male/female): LGBTQ: DrugUser from contacting the covid
 
 # Methods 
 
@@ -64,7 +64,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
   
-The percentage of infection is much higher for Males who took the placebo. Those who took the placebo became infected approximately 67.78%  of the time versus 32.22% who took the vaccine and contracted covid19. The Males in the placebo group are 2 times more likely to become infected when receiving the placebo.
+The percentage of infection is much higher for Males who took the placebo. Those who took the placebo became infected approximately 67.78%  of the time versus 32.22% who took the vaccine and contracted covid19.  
   
 ### Inferential Results 
 
@@ -74,7 +74,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a significant negative effect when Males took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test also confirms that the odds ratio of Males who take the placebo contract covid19 2 to 1 more times. The covid91 vaccine is effective for the Male subgroup tested. I would recommend the covid91 vaccine for the Male subgroup.   
+I reject the $H_0$ Null Hypothesis. There is a significant negative effect when Males took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.00000000004812 an amount significantly less than .05. The Fisher exact test shows the P-Value is 0.00000000002645 also an number significalty less than 0.05. The test  confirms that the odds ratio of males who take the placebo contract covid19 2.1 to 1 times more likely than those that took the vaccine.  I would recommend the Covid19 vaccine for the Male subgroup.
 
 ## Efficacy
 

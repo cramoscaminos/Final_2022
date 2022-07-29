@@ -112,7 +112,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
 
-The percentage of infection is much higher for Females who took the placebo. Those who took the placebo became infected approximately 58.89%  of the time versus 41.11% who took the vaccine and contracted covid19. The Females in the placebo group are 1.5 times more likely to become infected when receiving the placebo.
+The percentage of infection is much higher for Females who took the placebo. Those who took the placebo became infected approximately 58.89%  of the time versus 41.11% who took the vaccine and contracted covid19. 
 
 ### Inferential Results
 
@@ -122,7 +122,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```  
 
-I reject the $H_0$ Null Hypothesis, and accept the $H_a$ Alternative hypothesis as true. There is a  negative effect when Females took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. The test also confirms that the odds ratio of females who take the placebo contract covid19 almost 1.4 more times than Females who took the vaccine. The covid91 vaccine is effective for the Female subgroup tested. I would recommend the Covid91 for the Female subgroup. 
+I reject the $H_0$ Null Hypothesis. There is a  negative effect when Females took the placebo vs the covid91 vaccine which has a positive effect.  The Chi-squared test shows that the P-value is 0.0011 an amount less than .05. The Fisher exact test shows the P-Value is 0.0009484 also an number less than 0.05. Females in the placebo group are 1.5 times more likely to become infected when receiving the placebo versus the vaccine. The covid91 vaccine is effective for the Female subgroup tested. I would recommend the Covid91 for the Female subgroup. 
 
 ## Efficacy 
 

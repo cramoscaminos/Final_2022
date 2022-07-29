@@ -161,7 +161,7 @@ rowPerc(table1)
 colPerc(table1)
 ```  
 
-The percentage of infection is higher for subgroup LGBTQ who took the vaccine. Those who took the placebo became infected approximately 13.33%  of the time versus 86.67% who took the vaccine and contracted covid19. The subgroup LBGTQ in the vaccine group are 0.1465 times more likely to become infected when receiving the vaccine.
+The percentage of infection is higher for subgroup LGBTQ who took the vaccine. Those who took the placebo became infected approximately 13.33%  of the time versus 86.67% who took the vaccine. 
 
 ### Inferential Results
 
@@ -171,7 +171,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```    
 
-I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup LGBTQ. Members of the LGBTQ subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000000132 less than 0.05. the Fisher exact test P-value is 0.000000001642. The odds ratio is 0.1465. I would not recommend that memebers of the LGBTQ subgroup take the covid91 vaccine.  
+I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup LGBTQ. Members of the LGBTQ subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Sqaured test P-Value is 0.0000000132 less than 0.05. the Fisher exact test P-value is 0.000000001642. The odds ratio is 0.1465. I would not recommend that members of the LGBTQ subgroup get the covid19 vaccine.
 
 ## Efficacy 
 

@@ -220,6 +220,9 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```     
 
+I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Squared test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
+
+
 ## Efficacy
 
 ```{r}
@@ -235,9 +238,6 @@ confIntUpper = round(confIntUpper)
 The efficacy for DrugUser was `r efficDrugUser`%
 
 The 95% confidence interval for efficacy was (`r confIntLower` , `r confIntUpper`)%
-
-
-I reject the $H_0$ Null Hypothesis. Preventative vaccine, covid91, treatment has a negative effective for subgroup DrugUser. Members of the DrugUser subgroup were more likely to contract covid 19 after taking the vaccine. The P-Value for Chi-Squared test P-Value is 0.0000001803 less than 0.05. the Fisher exact test P-value is 0.00000002886. The odds ratio is 0.1775. I would not recommend that members of the DrugUser subgroup take the covid91 vaccine. 
 
 # Discussion and Conclusion 
 
